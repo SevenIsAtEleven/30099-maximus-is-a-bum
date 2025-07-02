@@ -7,4 +7,5 @@
 **1. Mechanum wheel drive code**<br />
 <pre>
     See Mechanum-drive.java
+    ! Make sure to read the instructions at the beginning of the file !
 </pre>
