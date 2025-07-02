@@ -1,10 +1,20 @@
 // INSTRUCTIONS FOR USE
 // 
-// Name motors
+// IMPORTANT NOTE!!!
+// 1. Make sure you are using a controller compatible with FTC SDK.
+// 2. Make sure your wheels are Mechanum wheels, or other wheels with the same properties.
+//
+// Motor configuration
 // Front left wheel motor name = motor_f_l
 // Front right wheel motor name = motor_f_r
 // Back left wheel motor name = motor_b_l
 // Back right wheel motor name = motor_b_r
+//
+// Gamepad Configuration
+// Gamepad1 name = gamepad1
+// Gamepad2 name = gamepad2
+//
+// SEE BOTTOM FOR DRIVING INSTRUCTIONS
 
 package org.firstinspires.ftc.teamcode;
 
@@ -24,19 +34,19 @@ public class Drive_Mechanism extends OpMode {
 	}
 	@Override()
 	public void loop() {
-		if (gamepad_drive.right_stick_x != 0 || gamepad_drive.right_stick_y != 0) {
-			telemetry.addData("Gamepad_drive", "y_val");
-			telemetry.addData("Gamepad_drive", gamepad_drive.right_stick_y);
-			telemetry.addData("Gamepad_drive", "x_val");
-			telemetry.addData("Gamepad_drive", gamepad_drive.right_stick_x);
+		if (gamepad1.right_stick_x != 0 || gamepad1.right_stick_y != 0) {
+			telemetry.addData("gamepad1", "y_val");
+			telemetry.addData("gamepad1", gamepad1.right_stick_y);
+			telemetry.addData("gamepad1", "x_val");
+			telemetry.addData("gamepad1", gamepad1.right_stick_x);
 			this.set_speed()
 		}
 	}
 	
 	public void set_speed() {
-		double x_val = gamepad_drive.right_stick_x;
-		double y_val = gamepad_drive.right_stick_y * -1;
-		double strafe_val = gamepad_drive.left_stick_x;
+		double x_val = gamepad1.right_stick_x;
+		double y_val = gamepad1.right_stick_y * -1;
+		double strafe_val = gamepad1.left_stick_x;
 		double front_left_speed = Math.floorDiv(y_val + x_val + strafe_val, 1);
 		double front_right_speed = Math.floorDiv(y_val - x_val - strafe_val, 1);
 		double back_left_speed = Math.floorDiv(y_val - x_val + strafe_val, 1);
@@ -47,14 +57,14 @@ public class Drive_Mechanism extends OpMode {
 		motor_b_l.setPower(back_left_speed)
 		motor_b_r.setPower(back_right_speed)
 		
-		telemetry.addData("Gamepad_drive", "y val");
-		telemetry.addData("Gamepad_drive", x_val);
-		telemetry.addData("Gamepad_drive", "x val");
-		telemetry.addData("Gamepad_drive", y_val);
-		telemetry.addData("Gamepad_drive", "left speed");
-		telemetry.addData("Gamepad_drive", left_speed);
-		telemetry.addData("Gamepad_drive", "right speed");
-		telemetry.addData("Gamepad_drive", right_speed);
+		telemetry.addData("gamepad1", "y val");
+		telemetry.addData("gamepad1", x_val);
+		telemetry.addData("gamepad1", "x val");
+		telemetry.addData("gamepad1", y_val);
+		telemetry.addData("gamepad1", "left speed");
+		telemetry.addData("gamepad1", left_speed);
+		telemetry.addData("gamepad1", "right speed");
+		telemetry.addData("gamepad1", right_speed);
 	}
 	
 	public void initialize_motors() {
@@ -64,15 +74,23 @@ public class Drive_Mechanism extends OpMode {
 		DcMotor motor_b_r;
 		motor_f_l = hwMap.get(DcMotor.class, "motor_f_l");
 		motor_f_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		telemetry.addData("Gamepad_drive", "Front Left motor initialized");
+		telemetry.addData("gamepad1", "Front Left motor initialized");
 		motor_f_r = hwMap.get(DcMotor.class, "motor_f_r");
 		motor_f_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		telemetry.addData("Gamepad_drive", "Front Right motor initialized");
+		telemetry.addData("gamepad1", "Front Right motor initialized");
 		motor_b_l = hwMap.get(DcMotor.class, "motor_b_l");
 		motor_b_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		telemetry.addData("Gamepad_drive", "Back Left motor initialized");
+		telemetry.addData("gamepad1", "Back Left motor initialized");
 		motor_b_r = hwMap.get(DcMotor.class, "motor_b_r");
 		motor_b_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		telemetry.addData("Gamepad_drive", "Back Right motor initialized");
+		telemetry.addData("gamepad1", "Back Right motor initialized");
 	}
 }
+
+// DRIVING INSTRUCTIONS
+//
+// One of your controllers will be controlling the driving of the robot. The controller should have been configured as mentioned at the beginning of the page
+// Your right joystick will be controlling the normal movement of the robot, while the left joystick will control strafing features
+// Pushing the right joystick forward will move the robot forward and vice versa
+// Pushing the right joystick right will cause the robot to ROTATE, not turn, but rotate to the right. This rotation is compatible with forward and backward movement, and vice versa for left.
+// Pushing the left joystick right will cause the robot to strafe or move horizontally to the right, and vice versa. Strafing has been made compatible with forward, backward, and rotational movement. However, it should usually be used alone and with caution.
