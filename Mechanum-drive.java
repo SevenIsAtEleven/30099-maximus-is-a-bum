@@ -25,24 +25,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-
-@teleop()
-public class Mechanum_drive extends OpMode {
-	@Override()
-	public void init() {
-		telemetry.addData("Init", "Code initialized.Proceeding to loop.");
-	}
-	@Override()
-	public void loop() {
-		if (gamepad1.right_stick_x != 0 || gamepad1.right_stick_y != 0) {
-			telemetry.addData("gamepad1", "y_val");
-			telemetry.addData("gamepad1", gamepad1.right_stick_y);
-			telemetry.addData("gamepad1", "x_val");
-			telemetry.addData("gamepad1", gamepad1.right_stick_x);
-			this.set_speed()
-		}
-	}
-	
+public class Mechanum_drive{
 	public void set_speed() {
 		double x_val = gamepad1.right_stick_x;
 		double y_val = gamepad1.right_stick_y * -1;
