@@ -3,5 +3,5 @@
 
 
 ### Resources
-**1. Mechanum wheel drive code**\n
+**1. Mechanum wheel drive code**<br />
    See Mechanum-drive.java
