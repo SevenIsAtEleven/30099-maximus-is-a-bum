@@ -20,5 +20,8 @@ public class Intake extends Opmode {
 
       }
 
-      public 
+      public void initialize_intake() {
+            DcMotor expansion_slide_motor;
+            
+      }
 }
