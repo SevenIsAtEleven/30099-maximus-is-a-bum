@@ -27,7 +27,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
 @teleop()
-public class Drive_Mechanism extends OpMode {
+public class Mechanum_drive extends OpMode {
 	@Override()
 	public void init() {
 		telemetry.addData("Init", "Code initialized.Proceeding to loop.");
