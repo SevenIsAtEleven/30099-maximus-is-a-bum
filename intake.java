@@ -9,14 +9,16 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @teleop()
 public class Intake extends Opmode {
-   @override()
-    public void init() {
-          telemetry.addData("Sys", "Initializing intake");
-          this.initialize_intake();
-    }
+      @override()
+      public void init() {
+            telemetry.addData("Sys", "Initializing intake");
+            this.initialize_intake();
+      }
     
-    @override()
-    public void loop() {
+      @override()
+      public void loop() {
 
-    }
+      }
+
+      public 
 }
