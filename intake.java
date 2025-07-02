@@ -21,7 +21,8 @@ public class Intake extends Opmode {
       }
 
       public void initialize_intake() {
-            DcMotor expansion_slide_motor;
-            
+            DcMotor motor_slide_expansion;
+            motor_f_l = hwMap.get(DcMotor.class, "motor_slide_expansion");
+		motor_f_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
       }
 }
