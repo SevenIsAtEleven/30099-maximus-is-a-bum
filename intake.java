@@ -6,3 +6,16 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+
+@teleop()
+public class Intake extends Opmode {
+   @override()
+    public init() {
+        asdf
+    }
+    
+    @override()
+    public loop() {
+
+    }
+}
