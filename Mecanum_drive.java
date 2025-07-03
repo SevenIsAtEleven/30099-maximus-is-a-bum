@@ -55,7 +55,7 @@ public class Mecanum_drive extends LinearOpMode {
     }
     public void fun_start_sequence() {
         horizontal_slide.setPower(1);
-        Thread.sleep(750000000)
+        Thread.sleep(750000000);
         horizontal_slide.setPower(1);
     }
 }
