@@ -27,12 +27,12 @@ public class Intake extends Opmode {
     public void initialize_intake() {
         CRServo intake_servo;
 	intake_servo = hwMap.get(CRServo.class, "intake_servo");
-	telemetry.addData("gamepad2", "Intake CRServo initialized")
+	telemetry.addData("gamepad2", "Intake CRServo initialized");
 	
 	DcMotor motor_slide_expansion;
 	motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
 	motor_slide_expansion.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-	telemetry.addData("gamepad2", "Slide expansion motor initialized")
+	telemetry.addData("gamepad2", "Slide expansion motor initialized");
     }
     public void intake() {
         forward_val = gamepad2.right_trigger;
@@ -41,8 +41,8 @@ public class Intake extends Opmode {
 	spin_speed = forward_val - reverse_val;
 	intake_servo.setPower(spin_speed);
 
-	telemetry.addData("gamepad2", "Intake servo speed")
-	telemetry.addData("gamepad2", spin_speed)
+	telemetry.addData("gamepad2", "Intake servo speed");
+	telemetry.addData("gamepad2", spin_speed);
     }
     public void intake_box_rotaion() {
         
