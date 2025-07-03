@@ -13,12 +13,14 @@ public class Mecanum_drive extends LinearOpMode {
     private DcMotor motor_bl = hardwareMap.dcMotor.get("motor_b_l");
     private DcMotor motor_fr = hardwareMap.dcMotor.get("motor_f_r");
     private DcMotor motor_br = hardwareMap.dcMotor.get("motor_b_r");
+
+    private DcMotor horizontal_slide_extension = hardwareMap.dcMotor.get("horizontal_slide")
     
     @Override
     public void runOpMode() throws InterruptedException {
-        while (opModeInInit()) {
+        /*while (opModeInInit()) {
             this.fun_start_sequence();
-        }
+        }*/
         
         waitForStart();
 
@@ -53,9 +55,12 @@ public class Mecanum_drive extends LinearOpMode {
         motor_fr.setPower(power_fr);
         motor_br.setPower(power_br);
     }
-    public void fun_start_sequence() {
-        horizontal_slide.setPower(1);
+    
+    //BETA!!!
+    // fun start up sequence cos why not
+    /*public void fun_start_sequence() {
+        horizontal_slide_extension.setPower(1);
         Thread.sleep(750000000);
-        horizontal_slide.setPower(1);
-    }
+        horizontal_slide_extension.setPower(1);
+    }*/
 }
