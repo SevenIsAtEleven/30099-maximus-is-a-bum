@@ -44,6 +44,7 @@ public class robot {
         
         CRServo intake_servo;
         intake_servo = hwMap.get(CRServo.class, "intake_servo");
+	intake_servo.setZeroPowerBehaviour(DcMotor.ZeroPowerBehaviour.FLOAT);
 
         DcMotor motor_slide_expansion;
         motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
