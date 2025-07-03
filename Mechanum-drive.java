@@ -56,14 +56,14 @@ public class Mechanum_drive extends OpMode {
 		motor_b_l.setPower(back_left_speed)
 		motor_b_r.setPower(back_right_speed)
 		
-		telemetry.addData("gamepad1", "y val");
-		telemetry.addData("gamepad1", x_val);
-		telemetry.addData("gamepad1", "x val");
-		telemetry.addData("gamepad1", y_val);
-		telemetry.addData("gamepad1", "left speed");
-		telemetry.addData("gamepad1", left_speed);
-		telemetry.addData("gamepad1", "right speed");
-		telemetry.addData("gamepad1", right_speed);
+		telemetry.addData("gamepad1", "front left speed");
+		telemetry.addData("gamepad1", front_left_speed);
+		telemetry.addData("gamepad1", "front right speed");
+		telemetry.addData("gamepad1", front_right_speed);
+		telemetry.addData("gamepad1", "back left speed");
+		telemetry.addData("gamepad1", back_left_speed);
+		telemetry.addData("gamepad1", "back right speed");
+		telemetry.addData("gamepad1", back_right_speed);
 	}
 	
 	public void initialize_motors() {
