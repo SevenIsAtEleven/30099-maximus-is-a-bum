@@ -9,16 +9,21 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 public class Mecanum_drive extends LinearOpMode {
     // Connect motors
     // ID should match config
-    private DcMotor motor_fl = hardwareMap.dcMotor.get("motor_f_l");
-    private DcMotor motor_bl = hardwareMap.dcMotor.get("motor_b_l");
-    private DcMotor motor_fr = hardwareMap.dcMotor.get("motor_f_r");
-    private DcMotor motor_br = hardwareMap.dcMotor.get("motor_b_r");
+    private DcMotor motor_fl;
+    private DcMotor motor_bl;
+    private DcMotor motor_fr;
+    private DcMotor motor_br;
 
     //private DcMotor horizontal_slide_extension = hardwareMap.dcMotor.get("horizontal_slide")
     
     @Override
     public void runOpMode() throws InterruptedException {
-        /*while (opModeInInit()) {
+        motor_f_l = hardwareMap.dcMotor.get("motor_f_l");
+		motor_b_l = hardwareMap.dcMotor.get("motor_b_l");
+		motor_f_r = hardwareMap.dcMotor.get("motor_f_r");
+		motor_b_r = hardwareMap.dcMotor.get("motor_b_r");
+		
+		/*while (opModeInInit()) {
             this.funny_start_sequence();
         }*/
         
