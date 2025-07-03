@@ -4,6 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -41,5 +43,8 @@ public class Intake extends Opmode {
 
 	telemetry.addData("gamepad2", "Intake servo speed")
 	telemetry.addData("gamepad2", spin_speed)
+    }
+    public void intake_box_rotaion() {
+        
     }
 }
