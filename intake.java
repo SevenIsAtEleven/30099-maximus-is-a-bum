@@ -32,5 +32,8 @@ public class Intake extends Opmode {
     public void intake() {
         forward_val = gamepad2.right_trigger;
 	reverse_val = gamepad2.left_trigger;
+
+	spin_speed = forward_val - reverse_val;
+	intake_servo.setSpeed(spin_speed);
     }
 }
