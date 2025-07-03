@@ -17,7 +17,9 @@ public class Intake extends Opmode {
     
     @override()
     public void loop() {
-	
+	if (gampead2.right_trigger != 0 || gamepad2.left_trigger != 0) {
+	    this.intake();
+	}
     }
 
     public void initialize_intake() {
@@ -36,7 +38,8 @@ public class Intake extends Opmode {
 	
 	spin_speed = forward_val - reverse_val;
 	intake_servo.setPower(spin_speed);
-	
-	telemetry.addData("gamepad2", String.value_of(spin_speed * 100) + '% speed')
+
+	telemetry.addData("gamepad2", "Intake servo speed")
+	telemetry.addData("gamepad2", spin_speed)
     }
 }
