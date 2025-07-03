@@ -18,17 +18,17 @@ public class robot {
         telemetry.update();
         
         DcMotor motor_f_l;
-		DcMotor motor_f_r;
-		DcMotor motor_b_l;
-		DcMotor motor_b_r;
-		motor_f_l = hwMap.get(DcMotor.class, "motor_f_l");
-		motor_f_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		motor_f_r = hwMap.get(DcMotor.class, "motor_f_r");
-		motor_f_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		motor_b_l = hwMap.get(DcMotor.class, "motor_b_l");
-		motor_b_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-		motor_b_r = hwMap.get(DcMotor.class, "motor_b_r");
-		motor_b_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+	DcMotor motor_f_r;
+	DcMotor motor_b_l;
+	DcMotor motor_b_r;
+	motor_f_l = hwMap.get(DcMotor.class, "motor_f_l");
+	motor_f_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+	motor_f_r = hwMap.get(DcMotor.class, "motor_f_r");
+	motor_f_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+	motor_b_l = hwMap.get(DcMotor.class, "motor_b_l");
+	motor_b_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+	motor_b_r = hwMap.get(DcMotor.class, "motor_b_r");
+	motor_b_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         
         telemetry.addData("Sys", "Drive motors connected");
         telemetry.update();
@@ -56,11 +56,11 @@ public class robot {
         double x_val = gamepad1.right_stick_x;
         double y_val = gamepad1.right_stick_y * -1;
         double strafe_val = gamepad1.left_stick_x;
-        double front_left_speed = Math.floorDiv(y_val + x_val + strafe_val, 1);
-        double front_right_speed = Math.floorDiv(y_val - x_val - strafe_val, 1);
-        double back_left_speed = Math.floorDiv(y_val - x_val + strafe_val, 1);
-        double back_right_speed = Math.floorDiv(y_val + x_val - strafe_val, 1);
-
+        int front_left_speed = Math.floorDiv(y_val + x_val + strafe_val, 1);
+        int front_right_speed = Math.floorDiv(y_val - x_val - strafe_val, 1);
+        int back_left_speed = Math.floorDiv(y_val - x_val + strafe_val, 1);
+        int back_right_speed = Math.floorDiv(y_val + x_val - strafe_val, 1);
+        
         motor_f_l.setPower(front_left_speed);
         motor_f_r.setPower(front_right_speed);
         motor_b_l.setPower(back_left_speed);
@@ -101,5 +101,8 @@ public class robot {
     }
     public void swing() {
 
+    }
+    public void check_inputs() {
+        
     }
 }
