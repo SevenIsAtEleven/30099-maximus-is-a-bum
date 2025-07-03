@@ -38,11 +38,11 @@ public class Mechanum_drive extends OpMode {
 			telemetry.addData("gamepad1", gamepad1.right_stick_y);
 			telemetry.addData("gamepad1", "x_val");
 			telemetry.addData("gamepad1", gamepad1.right_stick_x);
-			this.set_speed()
+			this.drive()
 		}
 	}
 	
-	public void set_speed() {
+	public void drive() {
 		double x_val = gamepad1.right_stick_x;
 		double y_val = gamepad1.right_stick_y * -1;
 		double strafe_val = gamepad1.left_stick_x;
