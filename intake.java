@@ -21,8 +21,9 @@ public class Intake extends Opmode {
       }
 
       public void initialize_intake() {
-	      Servo intake_servo;
-	      intake_servo = hwMap.get(DcMotor.class, "intake_servo");
+	      CRServo intake_servo;
+	      intake_servo = hwMap.get(CRServo.class, "intake_servo");
+	      
 	      
 	      DcMotor motor_slide_expansion;
 	      motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
