@@ -2,7 +2,7 @@ public class robot {
     public void initialize() {
         telemetry.addData("Sys", "Starting initialization process")
 
-        DcMotor motor_f_l
+        DcMotor motor_f_l = 
         DcMotor motor_f_l
         DcMotor motor_f_l
         DcMotor motor_f_l
