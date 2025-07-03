@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.Servo;
     
 @TeleOp()
 public class main extends OpMode {
-    private robot obj;
+    private obj = new robot();
     
     @Override
     public void init() {
