@@ -7,8 +7,8 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp
 public class Mecanum_drive extends LinearOpMode {
-    // Declare our motors
-    // Make sure your ID's match your configuration
+    // Connect motors
+    // ID should match config
     private DcMotor motor_fl = hardwareMap.dcMotor.get("motor_f_l");
     private DcMotor motor_bl = hardwareMap.dcMotor.get("motor_b_l");
     private DcMotor motor_fr = hardwareMap.dcMotor.get("motor_f_r");
