@@ -38,7 +38,7 @@ public class Mechanum_drive extends OpMode {
 			telemetry.addData("gamepad1", gamepad1.right_stick_y);
 			telemetry.addData("gamepad1", "x_val");
 			telemetry.addData("gamepad1", gamepad1.right_stick_x);
-			this.drive()
+			this.drive();
 		}
 	}
 	
@@ -51,10 +51,10 @@ public class Mechanum_drive extends OpMode {
 		double back_left_speed = Math.floorDiv(y_val - x_val + strafe_val, 1);
 		double back_right_speed = Math.floorDiv(y_val + x_val - strafe_val, 1);
 		
-		motor_f_l.setPower(front_left_speed)
-		motor_f_r.setPower(front_right_speed)
-		motor_b_l.setPower(back_left_speed)
-		motor_b_r.setPower(back_right_speed)
+		motor_f_l.setPower(front_left_speed);
+		motor_f_r.setPower(front_right_speed);
+		motor_b_l.setPower(back_left_speed);
+		motor_b_r.setPower(back_right_speed);
 		
 		telemetry.addData("gamepad1", "front left speed");
 		telemetry.addData("gamepad1", front_left_speed);
