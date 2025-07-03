@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 //then we gotta code like the manual functions
 //then from main.java, which doesnt exist yet, we gotta do the @teleop thingy
 public class robot {
-    public void initialize() {
+    public void initialize(HardwareMap hwMap) {
         telemetry.addData("Sys", "Starting initialization process");
         telemetry.update();
         
@@ -55,6 +55,9 @@ public class robot {
         telemetry.addData("Sys", "Intake connected");
         telemetry.update();
 
+	//Outtake Connection
+	Servo claw;
+	claw = hwMap.get(Servo.class)
         
     }
     public void Mechanum_drive() {
