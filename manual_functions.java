@@ -9,6 +9,17 @@ import com.qualcomm.robotcore.hardware.Servo;
 //then we gotta code like the manual functions
 //then from main.java, which doesnt exist yet, we gotta do the @teleop thingy
 public class robot {
+    public DcMotor motor_f_l;
+    public DcMotor motor_f_r;
+    public DcMotor motor_b_l;
+    public DcMotor motor_b_r;
+    
+    public CRServo intake_servo;
+    public DcMotor motor_slide_expansion;
+    public Servo box_rotation;
+    
+    public Servo claw;
+    
     public void initialize(HardwareMap hwMap) {
         telemetry.addData("Sys", "Starting initialization process");
         telemetry.update();
@@ -17,10 +28,6 @@ public class robot {
         telemetry.addData("Sys", "Connecting Mechanum drive");
         telemetry.update();
         
-        public DcMotor motor_f_l;
-	public DcMotor motor_f_r;
-	public DcMotor motor_b_l;
-	public DcMotor motor_b_r;
 	motor_f_l = hwMap.get(DcMotor.class, "motor_f_l");
 	motor_f_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 	motor_f_r = hwMap.get(DcMotor.class, "motor_f_r");
@@ -42,21 +49,17 @@ public class robot {
         telemetry.addData("Sys", "Connecting intake");
         telemetry.update();
         
-        public CRServo intake_servo;
         intake_servo = hwMap.get(CRServo.class, "intake_servo");
 	intake_servo.setZeroPowerBehaviour(DcMotor.ZeroPowerBehaviour.FLOAT);
-
-        public DcMotor motor_slide_expansion;
+	
         motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
         motor_slide_expansion.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        public Servo box_rotation;
         box_rotation = hwMap.get(Servo.class, "box_rotation");
         telemetry.addData("Sys", "Intake connected");
         telemetry.update();
 
 	//Outtake Connection
-	public Servo claw;
 	claw = hwMap.get(Servo.class)
         
     }
