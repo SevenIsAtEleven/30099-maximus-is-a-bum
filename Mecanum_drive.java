@@ -18,7 +18,10 @@ public class Mecanum_drive extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         waitForStart();
 
-        if (isStopRequested()) return;
+        // End when stop is pressed
+        if (isStopRequested()) {
+            return;
+        }
 
         // Separate method implementation
         while (opModeIsActive()) {
@@ -28,6 +31,7 @@ public class Mecanum_drive extends LinearOpMode {
     public void drive() {
         // y_val reversed
         double y = -gamepad1.left_stick_y;
+        
         // Multiplier of 1.17 to counteract strafing range
         double x = gamepad1.left_stick_x * 1.17;
         double rx = gamepad1.right_stick_x;
