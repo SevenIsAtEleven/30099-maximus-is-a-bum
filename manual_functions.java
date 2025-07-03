@@ -1,6 +1,15 @@
 public class robot {
     public void initialize() {
+        telemetry.addData("Sys", "Starting initialization process")
+
+        DcMotor motor_f_l
+        DcMotor motor_f_l
+        DcMotor motor_f_l
+        DcMotor motor_f_l
+        telemetry.addData("Sys", "Drive motor initialization process complete")
         
+        telemetry.addData("Sys", "Starting initialization process")
+        telemetry.addData("Sys", "Starting initialization process")
     }
     public void Mechanum_drive() {
 
