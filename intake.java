@@ -17,7 +17,7 @@ public class Intake extends Opmode {
     
     @override()
     public void loop() {
-	telemtry
+	
     }
 
     public void initialize_intake() {
