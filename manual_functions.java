@@ -1,7 +1,22 @@
+package org.firstinspires.ftc.teamcode.mechanisms;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DigitalChannel;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
+//Plan
+
+//first, we gotta use the initialize function to set up all the motors and connect them
+//then we gotta code like the manual functions
+//then from main.java, which doesnt exist yet, we gotta do the @teleop thingy
 public class robot {
     public void initialize() {
-        telemetry.addData("Sys", "Starting initialization process")
-
+        telemetry.addData("Sys", "Starting initialization process");
+        telemetry.update();
+        
+        // Mechanum drive Connection
+        telemetry.addData("Sys", "Connecting Mechanum drive");
+        telemetry.update();
+        
         DcMotor motor_f_l;
 		DcMotor motor_f_r;
 		DcMotor motor_b_l;
@@ -14,12 +29,59 @@ public class robot {
 		motor_b_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 		motor_b_r = hwMap.get(DcMotor.class, "motor_b_r");
 		motor_b_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        telemetry.addData("Sys", "Drive motor initialization process complete")
         
-        telemetry.addData("Sys", "Starting initialization process")
-        telemetry.addData("Sys", "Starting initialization process")
+        telemetry.addData("Sys", "Drive motors connected");
+        telemetry.update();
+        
+        //Intake Connection
+        telemetry.addData("Sys", "Connecting intake");
+        telemetry.update();
+        
+        CRServo intake_servo;
+        intake_servo = hwMap.get(CRServo.class, "intake_servo");
+
+        DcMotor motor_slide_expansion;
+        motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
+        motor_slide_expansion.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        Servo box_rotation;
+        box_rotation = hwMap.get(Servo.class, "box_rotation");
+        telemetry.addData("Sys", "Intake connected");
+        telemetry.update();
+
+        
     }
     public void Mechanum_drive() {
+        
+        double x_val = gamepad1.right_stick_x;
+        double y_val = gamepad1.right_stick_y * -1;
+        double strafe_val = gamepad1.left_stick_x;
+        double front_left_speed = Math.floorDiv(y_val + x_val + strafe_val, 1);
+        double front_right_speed = Math.floorDiv(y_val - x_val - strafe_val, 1);
+        double back_left_speed = Math.floorDiv(y_val - x_val + strafe_val, 1);
+        double back_right_speed = Math.floorDiv(y_val + x_val - strafe_val, 1);
+
+        motor_f_l.setPower(front_left_speed);
+        motor_f_r.setPower(front_right_speed);
+        motor_b_l.setPower(back_left_speed);
+        motor_b_r.setPower(back_right_speed);
+
+        telemetry.addData("gamepad1", "front left speed");
+        telemetry.update();
+        telemetry.addData("gamepad1", front_left_speed);
+        telemetry.update();
+        telemetry.addData("gamepad1", "front right speed");
+        telemetry.update();
+        telemetry.addData("gamepad1", front_right_speed);
+        telemetry.update();
+        telemetry.addData("gamepad1", "back left speed");
+        telemetry.update();
+        telemetry.addData("gamepad1", back_left_speed);
+        telemetry.update();
+        telemetry.addData("gamepad1", "back right speed");
+        telemetry.update();
+        telemetry.addData("gamepad1", back_right_speed);
+        telemetry.update();
 
     }
     public void spin_intake() {
@@ -31,8 +93,8 @@ public class robot {
     public void intake_box() {
 
     }
-    public void claw(open) {
-
+    public void claw (boolean open) {
+    
     }
     public void vertical_expansion() {
 
