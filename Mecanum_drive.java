@@ -43,7 +43,7 @@ public class Mecanum_drive extends LinearOpMode {
             sys.drive(motor_fl, motor_bl, motor_fr, motor_br);
         }
     }
-    public void drive() {
+    /*public void drive() {
         // y_val reversed
         double y = -gamepad1.left_stick_y;
         
@@ -67,7 +67,7 @@ public class Mecanum_drive extends LinearOpMode {
     
     //BETA!!!
     // funny start up sequence cos why not
-    /*public void funny_start_sequence() {
+    public void funny_start_sequence() {
         horizontal_slide_extension.setPower(1);
         Thread.sleep(750000000);
         horizontal_slide_extension.setPower(1);
