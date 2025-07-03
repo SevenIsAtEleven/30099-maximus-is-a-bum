@@ -29,7 +29,8 @@ public class Intake extends Opmode {
 	motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
 	motor_slide_expansion.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
-    public void  {
-        ;
+    public void intake() {
+        forward_val = gamepad2.right_trigger;
+	reverse_val = gamepad2.left_trigger;
     }
 }
