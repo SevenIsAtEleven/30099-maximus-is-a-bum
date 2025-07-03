@@ -17,10 +17,10 @@ public class robot {
         telemetry.addData("Sys", "Connecting Mechanum drive");
         telemetry.update();
         
-        DcMotor motor_f_l;
-	DcMotor motor_f_r;
-	DcMotor motor_b_l;
-	DcMotor motor_b_r;
+        public DcMotor motor_f_l;
+	public DcMotor motor_f_r;
+	public DcMotor motor_b_l;
+	public DcMotor motor_b_r;
 	motor_f_l = hwMap.get(DcMotor.class, "motor_f_l");
 	motor_f_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 	motor_f_r = hwMap.get(DcMotor.class, "motor_f_r");
@@ -42,21 +42,21 @@ public class robot {
         telemetry.addData("Sys", "Connecting intake");
         telemetry.update();
         
-        CRServo intake_servo;
+        public CRServo intake_servo;
         intake_servo = hwMap.get(CRServo.class, "intake_servo");
 	intake_servo.setZeroPowerBehaviour(DcMotor.ZeroPowerBehaviour.FLOAT);
 
-        DcMotor motor_slide_expansion;
+        public DcMotor motor_slide_expansion;
         motor_slide_expansion = hwMap.get(DcMotor.class, "motor_slide_expansion");
         motor_slide_expansion.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        Servo box_rotation;
+        public Servo box_rotation;
         box_rotation = hwMap.get(Servo.class, "box_rotation");
         telemetry.addData("Sys", "Intake connected");
         telemetry.update();
 
 	//Outtake Connection
-	Servo claw;
+	public Servo claw;
 	claw = hwMap.get(Servo.class)
         
     }
