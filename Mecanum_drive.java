@@ -19,11 +19,11 @@ public class Mecanum_drive extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         motor_f_l = hardwareMap.dcMotor.get("motor_f_l");
-		motor_b_l = hardwareMap.dcMotor.get("motor_b_l");
-		motor_f_r = hardwareMap.dcMotor.get("motor_f_r");
-		motor_b_r = hardwareMap.dcMotor.get("motor_b_r");
-		
-		/*while (opModeInInit()) {
+	motor_b_l = hardwareMap.dcMotor.get("motor_b_l");
+	motor_f_r = hardwareMap.dcMotor.get("motor_f_r");
+	motor_b_r = hardwareMap.dcMotor.get("motor_b_r");
+	
+	/*while (opModeInInit()) {
             this.funny_start_sequence();
         }*/
         
