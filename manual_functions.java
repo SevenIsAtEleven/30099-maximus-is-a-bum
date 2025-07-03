@@ -29,6 +29,11 @@ public class robot {
 	motor_b_l.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 	motor_b_r = hwMap.get(DcMotor.class, "motor_b_r");
 	motor_b_r.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+	motor_f_l.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+	motor_f_r.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+	motor_b_l.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+	motor_b_r.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         
         telemetry.addData("Sys", "Drive motors connected");
         telemetry.update();
