@@ -4,9 +4,13 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import robot
 
 @TeleOp
 public class Mecanum_drive extends LinearOpMode {
+    // External class implementation to make code cleaner
+    private sys = new robot();
+	
     // Connect motors
     // ID should match config
     private DcMotor motor_fl;
@@ -18,10 +22,10 @@ public class Mecanum_drive extends LinearOpMode {
     
     @Override
     public void runOpMode() throws InterruptedException {
-        motor_f_l = hardwareMap.dcMotor.get("motor_f_l");
-	motor_b_l = hardwareMap.dcMotor.get("motor_b_l");
-	motor_f_r = hardwareMap.dcMotor.get("motor_f_r");
-	motor_b_r = hardwareMap.dcMotor.get("motor_b_r");
+        motor_fl = hardwareMap.dcMotor.get("motor_f_l");
+	motor_bl = hardwareMap.dcMotor.get("motor_b_l");
+	motor_fr = hardwareMap.dcMotor.get("motor_f_r");
+	motor_br = hardwareMap.dcMotor.get("motor_b_r");
 	
 	/*while (opModeInInit()) {
             this.funny_start_sequence();
@@ -36,7 +40,7 @@ public class Mecanum_drive extends LinearOpMode {
 
         // Separate method implementation
         while (opModeIsActive()) {
-            this.drive();
+            sys.drive(motor_fl, motor_bl, motor_fr, motor_br);
         }
     }
     public void drive() {
