@@ -16,6 +16,10 @@ public class Mecanum_drive extends LinearOpMode {
     
     @Override
     public void runOpMode() throws InterruptedException {
+        while (opModeInInit()) {
+            this.fun_start_sequence();
+        }
+        
         waitForStart();
 
         // End when stop is pressed
@@ -48,5 +52,10 @@ public class Mecanum_drive extends LinearOpMode {
         motor_bl.setPower(power_bl);
         motor_fr.setPower(power_fr);
         motor_br.setPower(power_br);
+    }
+    public void fun_start_sequence() {
+        horizontal_slide.setPower(1);
+        Thread.sleep(750000000)
+        horizontal_slide.setPower(1);
     }
 }
