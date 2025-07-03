@@ -90,7 +90,10 @@ public class robot {
 
     }
     public void spin_intake() {
-
+	forward = gamepad2.right_trigger;
+	reverse = gamepad2.left_trigger;
+	spin = forward - reverse;
+	intake_servo.setPower(spin);
     }
     public void horizontal_expansion() {
     
@@ -108,6 +111,7 @@ public class robot {
 
     }
     public void check_inputs() {
-        
+        this.Mechanum_drive();
+	this.spin_intake();
     }
 }
