@@ -31,4 +31,12 @@ public class robot {
         double extension = -gamepad2.right_stick_y;
         double slide_power = extension * 0.5;
     }
+
+    //BETA!!!
+    // funny start up sequence cos why not
+    public void funny_start_sequence() {
+        h_slide_motor.setPower(0.5);
+        Thread.sleep(750000000);
+        h_slide_motor.setPower(0.5;
+    }
 }
