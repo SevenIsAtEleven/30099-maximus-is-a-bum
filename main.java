@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import org.firstinspires.ftc.teamcode.robot;
 
 @TeleOp
-public class Mecanum_drive extends LinearOpMode {
+public class main extends LinearOpMode {
     // External class implementation to make code cleaner
     private robot sys = new robot();
 
