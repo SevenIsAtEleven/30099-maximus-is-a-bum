@@ -8,15 +8,15 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 
 public class robot {
     public void drive(Gamepad gamepad1, DcMotor motor_f_l, DcMotor motor_b_l, DcMotor motor_f_r, DcMotor motor_b_r) {
-        
+
         // y_val reversed
         double y = -gamepad1.left_stick_y;
 
-        
+
         // Multiplier of 1.17 to counteract strafing range
         double x = gamepad1.left_stick_x * 1.17;
         double rx = gamepad1.right_stick_x;
-        
+
         // Range_limiter containes power within range [-1,1]
         double range_limiter = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1);
         double power_fl = -1 * ((y + x + rx) / range_limiter);
@@ -37,7 +37,15 @@ public class robot {
         extendo.setPower(slide_power);
     }
 
-    //BETA!!!
+    public void intake(Gamepad gamepad2, CRServo intake_srvo) {
+        double fwd_spin = gamepad2.left_trigger;
+        double rvrse_spin = gamepad2.right_trigger;
+        double spin_power = fwd_spin - rvrse_spin;
+        
+        intake_srvo.setPower(spin_power);
+    }
+    
+    // BETA!!!
     // funny start up sequence cos why not
     /*public void funny_start_sequence(DcMotor h_slide_motor) {
         h_slide_motor.setPower(0.5);
