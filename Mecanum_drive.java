@@ -40,7 +40,7 @@ public class Mecanum_drive extends LinearOpMode {
 
         // Separate method implementation
         while (opModeIsActive()) {
-            sys.drive(gamepad1,motor_fl, motor_bl, motor_fr, motor_br);
+            sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
         }
     }
     /*public void drive() {
