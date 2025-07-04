@@ -30,11 +30,11 @@ public class robot {
         motor_f_r.setPower(power_fr);
         motor_b_r.setPower(power_br);
     }
-    public void horizontal_slides(Gamepad gamepad2, DcMotor horizontal_slides) {
+    public void extendo(Gamepad gamepad2, DcMotor extendo) {
         double extension = -gamepad2.right_stick_y;
         double slide_power = extension * 0.5;
 
-        horizontal_slides.setPower(slide_power);
+        extendo.setPower(slide_power);
     }
 
     //BETA!!!
