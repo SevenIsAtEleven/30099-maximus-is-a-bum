@@ -9,7 +9,7 @@ Robot CAD - <a href="https://cad.onshape.com/documents/6fba0affd7371c0076f5805e/
     See <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main/robot.java">Robot.java</a>
     Includes
      * Mecanum_drive
-       See mecanum_drive.java
+       See <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main/functions/mecanum_drive.java">mecanum_drive.java</a>
      * Intake
-       See intake.java
+       See <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main/intake.java">intake.java</a>
 </pre>
