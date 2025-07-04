@@ -20,7 +20,7 @@ public class main extends LinearOpMode {
     private DcMotor motor_br;
 
     //intake config
-    private DcMotor h_slide_motor;
+    private DcMotor extendo_motor;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -29,7 +29,7 @@ public class main extends LinearOpMode {
         motor_fr = hardwareMap.dcMotor.get("motor_f_r");
         motor_br = hardwareMap.dcMotor.get("motor_b_r");
 
-        h_slide_motor = hardwareMap.dcMotor.get("hs_motor");
+        extendo_motor = hardwareMap.dcMotor.get("motor_extendo");
 
     /*while (opModeInInit()) {
             sys.funny_start_sequence(h_slide_motor);
@@ -49,6 +49,6 @@ public class main extends LinearOpMode {
     }
     public void update() {
         sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
-        sys.horizontal_slide(gamepad2, h_slide_motor);
+        sys.horizontal_slide(gamepad2, extendo_motor);
     }
 }
