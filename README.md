@@ -3,8 +3,9 @@
 Robot CAD - <a href="https://cad.onshape.com/documents/6fba0affd7371c0076f5805e/w/4ec63f80cc81c7cb112896a5/e/277cc521092787c35fbf36e4">Onshape</a>
 
 ### Resources
-**1. Robot Function code**<br />
+**1. Robot code**<br />
 <pre>
+    All of our functions are stored in robot.java, while main.java is the file that is used to run the TeleOp Mode
     See Robot.java
     Includes
      * Mecanum_drive
