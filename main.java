@@ -47,13 +47,4 @@ public class main extends LinearOpMode {
             sys.horizontal_slide(gamepad2, h_slide_motor)
         }
     }
-    /*
-
-    //BETA!!!
-    // funny start up sequence cos why not
-    public void funny_start_sequence() {
-        h_slide_motor.setPower(0.5);
-        Thread.sleep(750000000);
-        h_slide_motor.setPower(0.5;
-    }*/
 }
