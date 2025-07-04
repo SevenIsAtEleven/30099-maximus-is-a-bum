@@ -21,8 +21,6 @@ public class main extends LinearOpMode {
     //intake config
     private DcMotor h_slide_motor;
 
-    //private DcMotor horizontal_slide_extension = hardwareMap.dcMotor.get("horizontal_slide")
-
     @Override
     public void runOpMode() throws InterruptedException {
         motor_fl = hardwareMap.dcMotor.get("motor_f_l");
