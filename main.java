@@ -49,6 +49,6 @@ public class main extends LinearOpMode {
     }
     public void update() {
         sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
-        sys.horizontal_slide(gamepad2, extendo_motor);
+        sys.extendo(gamepad2, extendo_motor);
     }
 }
