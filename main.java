@@ -28,7 +28,7 @@ public class main extends LinearOpMode {
         motor_fr = hardwareMap.dcMotor.get("motor_f_r");
         motor_br = hardwareMap.dcMotor.get("motor_b_r");
         
-        h_slide_motor = hardwareMap.dcMotor.get("hs_motor")
+        h_slide_motor = hardwareMap.dcMotor.get("hs_motor");
 
 	/*while (opModeInInit()) {
             sys.funny_start_sequence(h_slide_motor);
