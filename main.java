@@ -43,8 +43,11 @@ public class main extends LinearOpMode {
 
         // Separate method implementation
         while (opModeIsActive()) {
-            sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
-            sys.horizontal_slide(gamepad2, h_slide_motor)
+            this.update();
         }
+    }
+    public update() {
+        sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
+	sys.horizontal_slide(gamepad2, h_slide_motor);
     }
 }
