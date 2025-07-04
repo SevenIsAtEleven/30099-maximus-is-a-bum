@@ -8,7 +8,8 @@ import org.firstinspires.ftc.teamcode.robot;
 
 @TeleOp
 public class main extends LinearOpMode {
-    // External class implementation to make code cleaner
+    
+    // External class implementation to make code neater
     private robot sys = new robot();
 
     // Connect motors
@@ -27,10 +28,10 @@ public class main extends LinearOpMode {
         motor_bl = hardwareMap.dcMotor.get("motor_b_l");
         motor_fr = hardwareMap.dcMotor.get("motor_f_r");
         motor_br = hardwareMap.dcMotor.get("motor_b_r");
-        
+
         h_slide_motor = hardwareMap.dcMotor.get("hs_motor");
 
-	/*while (opModeInInit()) {
+    /*while (opModeInInit()) {
             sys.funny_start_sequence(h_slide_motor);
         }*/
 
@@ -46,8 +47,8 @@ public class main extends LinearOpMode {
             this.update();
         }
     }
-    public update() {
+    public void update() {
         sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
-	sys.horizontal_slide(gamepad2, h_slide_motor);
+        sys.horizontal_slide(gamepad2, h_slide_motor);
     }
 }
