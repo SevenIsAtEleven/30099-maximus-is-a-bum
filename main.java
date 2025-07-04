@@ -21,7 +21,7 @@ public class main extends LinearOpMode {
 
     //intake config
     private DcMotor extendo_motor;
-    private CRServo intake_servo;
+    private CRServo intake_crservo;
 
     @Override
     public void runOpMode() throws InterruptedException {
