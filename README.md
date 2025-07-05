@@ -1,6 +1,6 @@
 # OmicronX - FTC 30099<br />
 <img src="https://cdn.prod.website-files.com/6854d4a8e524965ae2661fb2/6854d7f1a1fee9b351f2ed02_vibrant%20logo%20with%20words%201.svg" loading="lazy" alt="">
-## Who are we?
+<h2>Who are we?</h2>
 <pre>
 We are an FTC robotics team based in Irvine, California. So if you live nearby and are interested in joining or need anything from
 us, please feel free to contact us at the details below. This <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main"> Github Repository</a> is our FTC environment along with our code. 
