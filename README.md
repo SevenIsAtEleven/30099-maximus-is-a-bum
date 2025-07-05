@@ -1,5 +1,11 @@
 # OmicronX - FTC 30099<br />
-<img src="https://cdn.prod.website-files.com/6854d4a8e524965ae2661fb2/6854d7f1a1fee9b351f2ed02_vibrant%20logo%20with%20words%201.svg" loading="lazy" alt="">
+<img src="https://cdn.prod.website-files.com/6854d4a8e524965ae2661fb2/6854d7f1a1fee9b351f2ed02_vibrant%20logo%20with%20words%201.svg" loading="lazy" alt="" id="team-logo">
+<style>
+#logo {
+  width: 100;
+  height: 25;
+}
+</style>
 <h2>Who are we?</h2>
 <pre>
 We are an FTC robotics team based in Irvine, California. So if you live nearby and are interested in joining or need anything from
