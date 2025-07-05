@@ -100,12 +100,12 @@ Not yet finished; Coming soon!
 1. Drive motor(s)<br />
   <pre>
     Name(s): motor_f_l, motor_f_r, motor_b_l, motor_b_l<br />
-    Port(s): idk, Max pls put this<br />
+    Port(s): CHM3, CHM1, CHM2, CHM0<br />
   </pre>
 2. Extendo motor(s)<br />
   <pre>
     Name(s): motor_extendo<br />
-    Port(s): idk, Max pls put this<br />
+    Port(s): EHM2<br />
   </pre>
 3. Intake servo(s)<br />
   <pre>
