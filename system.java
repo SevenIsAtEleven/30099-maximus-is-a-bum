@@ -2,7 +2,9 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
@@ -31,31 +33,35 @@ public class system {
         motor_b_r.setPower(power_br);
     }
     public void extendo(Gamepad gamepad2, DcMotor extendo) {
-        double extension = -gamepad2.right_stick_y;
-        double slide_power = extension * 0.5;
+        double slide_power = -gamepad2.left_stick_y;
 
         extendo.setPower(slide_power);
     }
 
-    public void intake(Gamepad gamepad2, CRServo intake_crsrvo) {
+    public void intake(Gamepad gamepad2, CRServo intake_crservo) {
         double fwd_spin = gamepad2.left_trigger;
         double rvrse_spin = gamepad2.right_trigger;
         double spin_power = fwd_spin - rvrse_spin;
-        
-        intake_crsrvo.setPower(spin_power);
+
+        intake_crservo.setPower(spin_power);
+    }
+    public  void lift(Gamepad gamepad2, DcMotorEx lift_r, DcMotorEx lift_l){
+        double lift_power = -gamepad2.right_stick_y;
+        lift_r.setPower(lift_power);
+        lift_l.setPower(lift_power);
     }
 
     /*public void intake_pod(Gamepad gamepad2, Servo intake_pod_r, Servo intake_pod_l) {
         double current_pos_r = intake_pod_r.getPosition();
         double current_pos_l = intake_pod_l.getPosition();
-        
-        
+
+
         intake_pod_r.scaleRange(0.0, 1.0);
         intake_pod_l.scaleRange(0.0, 1.0);
         intake_pod_r.setPosition(pos);
         intake_pod_l.setPosition(pos);
     }*/
-    
+
     // BETA!!!
     // funny start up sequence cos why not
     /*public void funny_start_sequence(DcMotor h_slide_motor) {
