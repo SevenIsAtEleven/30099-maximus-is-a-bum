@@ -1,4 +1,4 @@
-# <svg width="308" height="308" viewBox="0 0 308 308" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+# <svg width="105" height="105" viewBox="0 0 308 308" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_dd_17_1874)">
 <path d="M4 0H304V300H4V0Z" fill="url(#pattern0_17_1874)" shape-rendering="crispEdges"/>
 </g>
