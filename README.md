@@ -6,7 +6,7 @@ We are an FTC robotics team based in Irvine, California. So if you live nearby a
 us, please feel free to contact us at the details below. This <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main"> Github Repository</a> is our FTC environment along with our code. 
 We wish to make our resources open-source, so feel free to reach out if you need anything.
 </pre>
-## Resources
+<h2>Resources</h2>
 Website: <a href="https://v2.ftc30099.com">OmicronX</a><br />
 Computer-aided Design(CAD) for this season(Into the Deep): <a href="https://cad.onshape.com/documents/6fba0affd7371c0076f5805e/w/4ec63f80cc81c7cb112896a5/e/277cc521092787c35fbf36e4">Onshape</a><br />
 Email: <ftc30099@gmai.com><br />
