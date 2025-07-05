@@ -6,7 +6,7 @@
 
 <pre>
 We are an FTC robotics team based in Irvine, California. So if you live nearby and are interested in joining or need anything from
-us, please feel free to contact us at the details below. This <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main">Github Repository</a> is our FTC environment along with our code. 
+us, please feel free to contact us at the details below. This <a href="https://github.com/SevenIsAtEleven/30099-maximus-is-a-bum/blob/main" style="text-underline: none;">Github Repository</a> is our FTC environment along with our code. 
 We wish to make our resources open-source, so feel free to reach out if you need anything.
 </pre>
 
