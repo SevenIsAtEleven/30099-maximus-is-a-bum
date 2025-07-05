@@ -37,12 +37,12 @@ public class system {
         extendo.setPower(slide_power);
     }
 
-    public void intake(Gamepad gamepad2, CRServo intake_srvo) {
+    public void intake(Gamepad gamepad2, CRServo intake_crsrvo) {
         double fwd_spin = gamepad2.left_trigger;
         double rvrse_spin = gamepad2.right_trigger;
         double spin_power = fwd_spin - rvrse_spin;
         
-        intake_srvo.setPower(spin_power);
+        intake_crsrvo.setPower(spin_power);
     }
     
     // BETA!!!
