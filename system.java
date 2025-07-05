@@ -45,7 +45,7 @@ public class system {
         intake_crsrvo.setPower(spin_power);
     }
 
-    public void intake_pod(Gamepad gamepad2, Servo intake_pod_r, Servo intake_pod_l) {
+    /*public void intake_pod(Gamepad gamepad2, Servo intake_pod_r, Servo intake_pod_l) {
         double current_pos_r = intake_pod_r.getPosition();
         double current_pos_l = intake_pod_l.getPosition();
         
@@ -54,7 +54,7 @@ public class system {
         intake_pod_l.scaleRange(0.0, 1.0);
         intake_pod_r.setPosition(pos);
         intake_pod_l.setPosition(pos);
-    }
+    }*/
     
     // BETA!!!
     // funny start up sequence cos why not
