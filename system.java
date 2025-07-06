@@ -51,16 +51,18 @@ public class system {
         lift_l.setPower(lift_power);
     }
 
-    /*public void intake_pod(Gamepad gamepad2, Servo intake_pod_r, Servo intake_pod_l) {
-        double current_pos_r = intake_pod_r.getPosition();
-        double current_pos_l = intake_pod_l.getPosition();
-
-
-        intake_pod_r.scaleRange(0.0, 1.0);
-        intake_pod_l.scaleRange(0.0, 1.0);
-        intake_pod_r.setPosition(pos);
-        intake_pod_l.setPosition(pos);
-    }*/
+    public void intake_pod(Gamepad gamepad2, Servo intake_pod) {
+        double current_pos = intake_pod.getPosition();
+        double[] positions = [0.0, 0.33];
+        double next_pos;
+        
+        if (current_pos == positions[0]):
+            next_pos = positions[1];
+        else:
+            next_pos = positions[0];
+        
+        intake_pod.setPosition(next_pos)
+    }
 
     // BETA!!!
     // funny start up sequence cos why not
