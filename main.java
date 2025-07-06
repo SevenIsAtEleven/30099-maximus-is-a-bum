@@ -19,10 +19,12 @@ public class main extends LinearOpMode {
     private DcMotor motor_fr;
     private DcMotor motor_br;
 
-    //intake config
+    // Intake system config
     private DcMotor extendo_motor;
     private CRServo intake_crservo;
+    private Servo intake_pod;
 
+    // Lift config
     private DcMotor lift_motor_l;
     private DcMotor lift_motor_r;
 
@@ -35,6 +37,7 @@ public class main extends LinearOpMode {
 
         intake_crservo = hardwareMap.crservo.get("crservo_intake");
         extendo_motor = hardwareMap.dcMotor.get("motor_extendo");
+        intake_pod = hardwareMap.servo.get("servo_intake_pod");
 
         lift_motor_l = hardwareMap.dcMotor.get("motor_lift_l");
         lift_motor_r = hardwareMap.dcMotor.get("motor_lift_r");
@@ -56,6 +59,9 @@ public class main extends LinearOpMode {
         }
     }
     public void update() {
+        if (gamepad2.a) {
+            sys.intake_pod(gamepad2, intake_pod);
+        }
         sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
         sys.extendo(gamepad2, extendo_motor);
         sys.intake(gamepad2, intake_crservo);
