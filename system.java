@@ -47,7 +47,7 @@ public class system {
     }
     public  void lift(Gamepad gamepad2, DcMotorEx lift_r, DcMotorEx lift_l){
         double lift_power = -gamepad2.right_stick_y;
-        lift_r.setPower(lift_power);
+        lift_r.setPower(-lift_power);
         lift_l.setPower(lift_power);
     }
 
