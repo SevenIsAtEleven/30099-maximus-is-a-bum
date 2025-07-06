@@ -2,9 +2,10 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import org.firstinspires.ftc.teamcode.robot;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 @TeleOp
 public class main extends LinearOpMode {
@@ -14,33 +15,30 @@ public class main extends LinearOpMode {
 
     // Connect motors
     // ID should match config
-    private DcMotor motor_fl;
-    private DcMotor motor_bl;
-    private DcMotor motor_fr;
-    private DcMotor motor_br;
-
-    // Intake system config
-    private DcMotor extendo_motor;
+    private DcMotorEx motor_fl, motor_bl, motor_fr, motor_br;
+    
+	// Intake config
+    private DcMotorEx extendo;
     private CRServo intake_crservo;
-    private Servo intake_pod;
-
-    // Lift config
-    private DcMotor lift_motor_l;
-    private DcMotor lift_motor_r;
+    private Servo intake_pod_srvo, pitch_servo;
+	
+	// Lift
+    private DcMotorEx lift_l, lift_r;
 
     @Override
     public void runOpMode() throws InterruptedException {
-        motor_fl = hardwareMap.dcMotor.get("motor_f_l");
-        motor_bl = hardwareMap.dcMotor.get("motor_b_l");
-        motor_fr = hardwareMap.dcMotor.get("motor_f_r");
-        motor_br = hardwareMap.dcMotor.get("motor_b_r");
+        motor_fl = hardwareMap.get(DcMotorEx.class, "motor_f_l");
+        motor_bl = hardwareMap.get(DcMotorEx.class, "motor_b_l");
+        motor_fr = hardwareMap.get(DcMotorEx.class, "motor_f_r");
+        motor_br = hardwareMap.get(DcMotorEx.class, "motor_b_r");
 
-        intake_crservo = hardwareMap.crservo.get("crservo_intake");
-        extendo_motor = hardwareMap.dcMotor.get("motor_extendo");
-        intake_pod = hardwareMap.servo.get("servo_intake_pod");
+        intake_crservo = hardwareMap.get(CRServo.class, "crservo_intake");
+        extendo = hardwareMap.get(DcMotorEx.class, "motor_extendo");
+	    intake_pod_srvo = hardwareMap.get(Servo.class, "servo_intake_pod");
+	    pitch_servo = hardwareMap.get(Servo.class, "servo_pitch");
 
-        lift_motor_l = hardwareMap.dcMotor.get("motor_lift_l");
-        lift_motor_r = hardwareMap.dcMotor.get("motor_lift_r");
+        lift_l = hardwareMap.get(DcMotorEx.class, "motor_lift_l");
+        lift_r = hardwareMap.get(DcMotorEx.class, "motor_lift_l");
 
     /*while (opModeInInit()) {
             sys.funny_start_sequence(h_slide_motor);
@@ -58,13 +56,17 @@ public class main extends LinearOpMode {
             this.update();
         }
     }
+    
     public void update() {
-        if (gamepad2.a) {
-            sys.intake_pod(gamepad2, intake_pod);
-        }
-        sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
-        sys.extendo(gamepad2, extendo_motor);
+        if (gamepad2.right_bumper) {
+	        sys.intake_pod(intake_pod_srvo);
+	    }
+	    /*if (gamepad2.left_bumper) {
+    	    sys.pitch(pitch_servo);
+    	}*/
+    	sys.drive(gamepad1, motor_fl, motor_bl, motor_fr, motor_br);
+        sys.extendo(gamepad2, extendo);
         sys.intake(gamepad2, intake_crservo);
-        sys.lift(gamepad2, lift_motor_l,. lift_motor_r);
+        sys.lift(gamepad2, lift_l, lift_r);
     }
 }
