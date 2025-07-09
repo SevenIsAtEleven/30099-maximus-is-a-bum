@@ -51,7 +51,7 @@ public class monkey {
     }
     public void i_arm(Servo arm_i) {
         double intake_pos = 0.25;
-        double transfer_pos = 0.95;
+        double transfer_pos = 0.9;
         double curr_pos = arm_i.getPosition();
 
         if ((curr_pos > intake_pos - 0.05) && (curr_pos < intake_pos + 0.05)) {
