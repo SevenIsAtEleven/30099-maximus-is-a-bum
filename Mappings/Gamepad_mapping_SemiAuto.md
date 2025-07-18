@@ -85,7 +85,7 @@
 </pre>
 * Button Y
 <pre>
-  Will be used to deposit specimen to rod includes lift, lift arm, wrist, and claw (**NEEDS RUN TO POSITION TO AVOID CLAW SERVO DAMAGE**!!!)
+  Will be used to deposit specimen to rod includes lift, lift arm, wrist, and claw (<strong>NEEDS RUN TO POSITION TO AVOID CLAW SERVO DAMAGE</strong>!!!)
 </pre>
 * D-pad
 <pre>
